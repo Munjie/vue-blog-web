@@ -13,8 +13,12 @@ import axios from 'axios'
 //axios.defaults.baseURL = 'http://120.27.242.132:8081/';
 
  axios.defaults.baseURL = 'http://localhost:9090/api/';
+// element ui
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+// markdown 编辑器
+import mavonEditor from 'mavon-editor';
+import 'mavon-editor/dist/css/index.css'
 
 //将axios写成vue的原型属性
 Vue.prototype.$axios = axios;
@@ -26,9 +30,10 @@ Vue.prototype.qs = qs;
 //引入vuex
 // import Vuex from "./vuex";
 // Vue.use(Vuex)
-Vue.use(router)
-Vue.config.productionTip = false
+Vue.use(router);
+Vue.config.productionTip = false;
 Vue.use(ElementUI);
+Vue.use(mavonEditor);
 //导入时间插件
 import moment from 'moment';
 //定义全局时间过滤器

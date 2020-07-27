@@ -1776,7 +1776,7 @@ img.avatar {
 }
 @media screen and (max-width: 800px){
     html {
-        background: url(../img/pages/backgroundforphone.jpg);
+        background: url(../img/pages/001.jpg);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-attachment: fixed;

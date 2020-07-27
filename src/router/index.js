@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import homepage from '@/components/homepage'
 import list from '@/components/list'
 import article from '@/components/article'
+import editor from "../components/editor";
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -17,7 +18,6 @@ export default new Router({
       component: homepage,
       redirect:'/list',
       children: [
-        
         {
           path: '*',
           redirect:'/list',
@@ -25,16 +25,21 @@ export default new Router({
         {
           path: '/list',
           name: 'list',
-          component: list  
-        } ,    
+          component: list
+        } ,
         {
            path: '/articel/:id',
            name: 'articel',
-           component: article, 
-         }
+           component: article,
+         },
       ]
      },
- 
+    {
+      path: '/editor',
+      name: 'editor',
+      component: editor,
+    }
+
   ],
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }

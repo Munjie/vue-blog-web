@@ -20,7 +20,6 @@
 
 <script>
 import tou from "./components/tou.vue";
-import header from "./components/header";
 export default {
   components: {tou},
   methods: {},

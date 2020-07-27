@@ -20,6 +20,7 @@
                   </span>
                   <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item>个人信息</el-dropdown-item>
+                    <el-dropdown-item @click.native="toEdit">发表文章</el-dropdown-item>
                     <el-dropdown-item>退出登录</el-dropdown-item>
                   </el-dropdown-menu>
                 </el-dropdown>
@@ -47,6 +48,9 @@
           this.$router.push({ path: "/list", query: { search: this.search } });
           this.search=""
         }
+      },
+      toEdit(){
+        this.$router.push({ path: "editor",name:"editor" });
       }
     }
   };

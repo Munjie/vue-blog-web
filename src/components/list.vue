@@ -1,7 +1,7 @@
 <template>
   <div id="list">
     <div class="c-list">
-      <router-link tag="div" :to="'/articel/'+item.id" v-for="item in  articlelist" :key="item.id" class="post-content">
+      <router-link tag="div" :to="{ path: '/articel/'+item.id}" v-for="item in  articlelist" :key="item.id" class="post-content">
         <img class="picture" :src="item.image" />
         <div class="cont">
           <p>

@@ -40,7 +40,7 @@ export default {
       // get请求
       this.$axios({
         method: "get",
-        url: "/json/article",
+        url: "/article/detail",
         params: {
           id: this.$route.params.id
         }
