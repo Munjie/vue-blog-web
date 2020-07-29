@@ -1,23 +1,23 @@
 <template>
   <div id="list">
     <div class="c-list">
-      <router-link tag="div" :to="{ path: '/articel/'+item.id}" v-for="item in  articlelist" :key="item.id" class="post-content">
-        <img class="picture" :src="item.image" />
+      <router-link tag="div" :to="{ path: '/articel/'+item.articleId}" v-for="item in  articlelist" :key="item.articleId" class="post-content">
+      <!--  <img class="picture" :src="item.image" />-->
         <div class="cont">
           <p>
-            <em class="recommend" v-if="item.istop==='1'">置顶</em>
-            <em class="tuijian" v-if="item.istop==='0'">推荐</em>
+           <!-- <em class="recommend" v-if="item.istop==='1'">置顶</em>
+            <em class="tuijian" v-if="item.istop==='0'">推荐</em>-->
             <span class="content-title">{{item.title}}</span>
           </p>
-          <div class="content">{{item.summary}}</div>
+        <!--  <div class="content">{{item.summary}}</div>-->
         </div>
         <div class="post-content-footer">
-          <span class="tag tag-time">{{item.releasetime | dataFormat}}</span>
-          <span class="post-tag" v-for="(label,index) in item.label" :key="index">{{label}}</span>
+          <span class="tag tag-time">{{item.releaseTime}}</span>
+         <!-- <span class="post-tag" v-for="(label,index) in item.label" :key="index">{{label}}</span>
           <span class="tag right ipad">
             <span>点赞({{item.visits}})</span>
             <span>评论({{item.comment}})</span>
-          </span>
+          </span>-->
         </div>
      </router-link>
       <div class="pagepagin-list">
@@ -80,10 +80,10 @@ export default {
         res => {
           //分割字符串
           let arr = Object.entries(res.data.data);
-          for (var i = 0; i <= arr.length - 1; i++) {
+          /*for (var i = 0; i <= arr.length - 1; i++) {
             res.data.data[i].label = res.data.data[i].label.split(",");
             res.data.data[i].label = res.data.data[i].label.slice(0, 3);
-          }
+          }*/
           this.articlelist = res.data.data;
           this.pagenum = res.data.total;
           this.thispage = 1;

@@ -42,7 +42,8 @@ export default {
         method: "get",
         url: "/article/detail",
         params: {
-          id: this.$route.params.id
+          /*articleId: this.$route.params.id*/
+          articleId: '20200728115927725'
         }
       }).then(
         res => {
@@ -68,7 +69,7 @@ export default {
           //     alert(t);
           //   }
           // }
-          this.article=res.data.data.htmlContents
+          this.article=res.data.data.content
         },
         err => {
           console.log(err);
